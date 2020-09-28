@@ -1,0 +1,49 @@
+server:
+  port: 8081
+  servlet:
+    # 应用的访问路径
+    context-path: /Hs
+
+spring:
+  #redis配置
+  redis:
+      database: 0
+      host: 122.51.3.44
+      lettuce:
+        pool:
+          max-active: 8   #最大连接数据库连接数,设 0 为没有限制
+          max-idle: 8     #最大等待连接中的数量,设 0 为没有限制
+          max-wait: 30  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+          min-idle: 0     #最小等待连接中的数量,设 0 为没有限制
+        #shutdown-timeout: 100ms
+          timeout: 0
+      password: 'wj123456'
+      port: 6379
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+    content-type: text/html; charset=utf-8
+    template-loader-path: classpath:/templates
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    cache: false
+    allow-request-override: true
+#  mvc:
+#    view:
+#      prefix: /templates/
+#      suffix: .html
+#    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/**
+
+#配置日志
+logging:
+  path:
+    config: classpath:config/logback-spring.xml
+  #指定不同目录下的日志的级别
+  level:
+    com.shimain.springboot.mapper: DEBUG
+  #此处存放日志的路径
+  file:
+    path: G:/IDEAWORKSPACE/log/Hs
