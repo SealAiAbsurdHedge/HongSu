@@ -1,4 +1,4 @@
-package com.example.hongsu.system.controller;/* *
+package com.example.hongsu;/* *
  *  @author:WJ
  *  @date: 2020-05-23 14:50
  *  @describe:
@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.interfaces.RSAPrivateKey;
+import java.text.DateFormat;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -302,5 +303,11 @@ public class EasyExcelController {
         }
         RSAPrivateKey privateKey = (RSAPrivateKey) keys.get("private");
         System.out.println();
+    }
+
+    @Test
+    public void test4(){
+        Date date = new Date();
+        System.out.println(date);
     }
 }
