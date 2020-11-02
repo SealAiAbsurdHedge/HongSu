@@ -308,6 +308,9 @@ public class EasyExcelController {
     @Test
     public void test4(){
         Date date = new Date();
-        System.out.println(date);
+
+        UserBean userBean = new UserBean();
+        userBean.setDate(new Date());
+        System.out.println(userBean.toString());
     }
 }

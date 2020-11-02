@@ -5,6 +5,13 @@ server:
     context-path: /Hs
 
 spring:
+  #mysql配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://122.51.3.44:3306/hong_su?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
   #redis配置
   redis:
       database: 0
@@ -47,3 +54,10 @@ logging:
   #此处存放日志的路径
   file:
     path: G:/IDEAWORKSPACE/log/Hs
+
+#mybatis plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.example.hongsu.**.entity,com.example.hongsu.**.dto
+  configuration:
+    map-underscore-to-camel-case: true

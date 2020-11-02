@@ -9,6 +9,7 @@ import lombok.Data;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Data
 public class UserBean {
@@ -30,6 +31,8 @@ public class UserBean {
     @NotNull(message = "用户邮箱不能为空")
     @Email(message = "邮箱格式不正确")
     private String email;
+
+    private Date date;
 
     public UserBean(){};
     public UserBean(String userName,String password){
