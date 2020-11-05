@@ -2,4 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.hongsu.quartz.mapper.ScheduledTaskMapper">
 
+    <select id="selectSqlByParamXml" resultType="com.example.hongsu.quartz.entity.ScheduledTask">
+        select * from scheduled_task where 1=1
+        <if test="taskKey != null and taskKey != ''">
+            and task_key= #{taskKey}
+        </if>
+    </select>
+
+    <select id="selectPageXml" resultType="com.example.hongsu.quartz.entity.ScheduledTask">
+       select * from scheduled_task ${ew.customSqlSegment}
+    </select>
+
+    <select id="selectPageXmlMap" resultType="map">
+      select * from scheduled_task where task_key &gt;=#{param}
+    </select>
 </mapper>

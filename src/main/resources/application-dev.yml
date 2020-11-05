@@ -57,7 +57,7 @@ logging:
 
 #mybatis plus配置
 mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
   typeAliasesPackage: com.example.hongsu.**.entity,com.example.hongsu.**.dto
   configuration:
     map-underscore-to-camel-case: true
